@@ -62,6 +62,12 @@
         btnshow.addEventListener('click', () => {
             console.log(usuarios.list());
         })
+        
+        let btnsearch = document.getElementById('bnshr');
+        btnsearch.addEventListener('click', () => {
+            let results = document.getElementById('search').value;
+            console.log(usuarios.search(results));
+        })
     </script> 
     <script src="posts.js"></script>
 </body>
