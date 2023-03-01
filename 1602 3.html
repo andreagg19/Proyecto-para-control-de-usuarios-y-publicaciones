@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Proyecto para control de usuarios y publicaciones</title>
 </head>
@@ -15,21 +15,39 @@
     <h1>U s e r s</h1>
     <form action="" id="formulario">
         <label for="">
-            Username: <input type="text">
-            Name: <input type="text">
-            Email: <input type="text">
-            Webpage: <input type="text">
-            Age: <input type="text">
+            Username: <input type="text" id="username">
+            Name: <input type="text" id="name">
+            Email: <input type="text" id="email">
+            Webpage: <input type="text" id="webpage">
+            Age: <input type="text" id="age">
         </label>
         <button id="bnAdd">Add</button>
         <button id="bnRe">Reload</button>
         <button id="bnSh">Show</button>
+
+        <div>
+            <ul id="usersss"></ul>
+        </div>
 
         <h1>P o s t s</h1>
         <div id="results">
             <!-- //aqui pretendo mostrar las publicaciones de los usuarios -->
         </div>
     </form>
-    <script src="usuarios.js"></script>
+    <script src="usuarios.js">
+        let btnadd = document.getElementById('bnAdd');
+        btnadd.addEventListener('click',() => {
+            let vuser = document.getElementById('username').value;
+            let vname = document.getElementById('name').value;
+            let vemail = document.getElementById('email').value;
+            let vwebp = document.getElementById('webpage').value;
+            let vage = document.getElementById('age').value;
+            let uSer = new Usuarios(vuser, vname, vemail, vwebp, vage);
+            uSer.id = uSer.data.length+1; 
+            console.log(uSer);
+            uSer.add(uSer);
+        }
+    </script>
     <script src="posts.js"></script>
+</body>
 </html>
