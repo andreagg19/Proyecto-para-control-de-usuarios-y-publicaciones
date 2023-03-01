@@ -1,6 +1,13 @@
 class Usuarios{
-    constructor(){
-        this.data=[{
+    constructor(username, name, email, webpage, age ){
+        this.id = this.id;
+        this.username = username;
+        this.name = name;
+        this.email = email;
+        this.webpage = webpage;
+        this.age = age;
+        this.data=[
+            {
             "id": 1,
             "name": "Leanne Graham",
             "username": "Bret",
@@ -180,3 +187,4 @@ class Usuarios{
         return this.data;
     }
 }
+
