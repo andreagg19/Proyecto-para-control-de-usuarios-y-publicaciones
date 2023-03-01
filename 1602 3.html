@@ -21,9 +21,9 @@
             Webpage: <input type="text" id="webpage">
             Age: <input type="text" id="age">
         </label>
-        <button id="bnAdd">Add</button>
-        <button id="bnRe">Reload</button>
-        <button id="bnSh">Show</button>
+        <button type="button" id="bnAdd">Add</button>
+        <button type="button" id="bnRe">Reload</button>
+        <button type="button" id="bnSh">Show</button>
 
         <div>
             <ul id="usersss"></ul>
@@ -34,20 +34,35 @@
             <!-- //aqui pretendo mostrar las publicaciones de los usuarios -->
         </div>
     </form>
-    <script src="usuarios.js">
+    <script src="usuarios.js"></script>
+    <script>
         let btnadd = document.getElementById('bnAdd');
+        let usuarios = new Usuarios (data);
         btnadd.addEventListener('click',() => {
             let vuser = document.getElementById('username').value;
             let vname = document.getElementById('name').value;
             let vemail = document.getElementById('email').value;
             let vwebp = document.getElementById('webpage').value;
             let vage = document.getElementById('age').value;
-            let uSer = new Usuarios(vuser, vname, vemail, vwebp, vage);
-            uSer.id = uSer.data.length+1; 
-            console.log(uSer);
-            uSer.add(uSer);
-        }
-    </script>
+            //let uSer = new Usuarios(vuser, vname, vemail, vwebp, vage);
+            let id = usuarios.data.length+1; 
+            let newUser ={
+                "id":id,
+                "username":vuser,
+                "name":vuser,
+                "email":vemail,
+                "webpage":vwebp,
+                "age":vage
+            }
+            console.log(newUser);
+            usuarios.add(newUser);
+        });
+
+        let btnshow = document.getElementById('bnSh');
+        btnshow.addEventListener('click', () => {
+            console.log(usuarios.list());
+        })
+    </script> 
     <script src="posts.js"></script>
 </body>
 </html>
