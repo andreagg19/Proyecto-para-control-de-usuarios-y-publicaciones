@@ -1,0 +1,17 @@
+html {
+    background-color: pink;
+    font-family: 'Tilt Neon', cursive;
+}
+
+#tit {
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-size: 500%;
+}
+
+h1 {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
